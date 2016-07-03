@@ -207,7 +207,7 @@ var ExpeditiousEngine = require('expeditious').ExpeditiousEngine;
 var util = require('util');
 
 function CustomEngine (opts) {
-  this.call(ExpeditiousEngine);
+  ExpeditiousEngine.call(this);
 }
 util.inherits(CustomEngine, ExpeditiousEngine);
 
