@@ -1,0 +1,35 @@
+{
+  "name": "expeditious",
+  "version": "0.1.0",
+  "description": "caching interface to simplify interaction with multiple storage engines",
+  "main": "lib/cache.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit && npm run coverage",
+    "lint": "npm run jshint && npm run linelint",
+    "jshint": "jshint $(ls lib/*.js)",
+    "linelint": "linelint $(ls lib/*.js)",
+    "unit": "mocha test/",
+    "coverage": "nyc mocha test/ && nyc report --reporter=html"
+  },
+  "keywords": [
+    "expeditious",
+    "caching",
+    "cache",
+    "api"
+  ],
+  "author": "Evan Shortiss",
+  "license": "MIT",
+  "dependencies": {
+    "safejson": "^1.0.1",
+    "verror": "^1.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jshint": "^2.9.2",
+    "linelint": "^1.0.0",
+    "mocha": "^2.5.3",
+    "nyc": "^6.6.1",
+    "proxyquire": "^1.7.9",
+    "sinon": "^1.17.4"
+  }
+}
