@@ -394,4 +394,17 @@ describe('expeditious handlers', function () {
     });
   });
 
+  describe('#getDefaultTtl', function () {
+    it('should return opts.defaultTtl value', function () {
+      var mod = require('../lib/handlers')({
+        engine: engine,
+        namespace: TEST_NAMESPACE,
+        defaultTtl: TEST_DEFAULT_TTL,
+        objectMode: false
+      });
+
+      expect(mod.getDefaultTtl()).to.equal(TEST_DEFAULT_TTL);
+    });
+  });
+
 });
