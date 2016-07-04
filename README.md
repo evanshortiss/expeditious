@@ -1,5 +1,6 @@
 expeditious
 ===========
+[![Circle CI](https://circleci.com/gh/evanshortiss/expeditious/tree/master.svg?style=svg)](https://circleci.com/gh/evanshortiss/expeditious/tree/master)
 
 expeditious is a generic caching API that can read/write key value pairs
 from/to compatible caching "engines". Engines enable you to easily switch cache
