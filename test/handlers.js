@@ -370,4 +370,28 @@ describe('expeditious handlers', function () {
     });
   });
 
+  describe('#isObjectMode', function () {
+    it('should return false', function () {
+      var mod = require('../lib/handlers')({
+        engine: engine,
+        namespace: TEST_NAMESPACE,
+        defaultTtl: TEST_DEFAULT_TTL,
+        objectMode: false
+      });
+
+      expect(mod.isObjectMode()).to.be.false;
+    });
+
+    it('should return true', function () {
+      var mod = require('../lib/handlers')({
+        engine: engine,
+        namespace: TEST_NAMESPACE,
+        defaultTtl: TEST_DEFAULT_TTL,
+        objectMode: true
+      });
+
+      expect(mod.isObjectMode()).to.be.true;
+    });
+  });
+
 });
