@@ -37,6 +37,30 @@ words.set({
 });
 ```
 
+## Debugging
+If you need some debug logging from this module then it can be enabled using
+a `DEBUG` environment variable. This is because we use the `debug` module for
+logging.
+
+Here's the general format:
+
+```
+export DEBUG=expeditious@$EXPEDITIOUS_VERSION-$NAMESPACE
+```
+
+For example, if you were using expeditious 0.2.0 had a logger with the namespace
+_users_ then the following would allow it to write debug logs:
+
+```
+export DEBUG=expeditious@0.2.0-users
+```
+
+Alternatively you can enable logging for all 0.2.0 loggers like so:
+
+```
+export DEBUG=expeditious@0.2.0-*
+```
+
 ## API
 
 ### expeditious.ExpeditiousEngine
