@@ -2,7 +2,6 @@ expeditious
 ===========
 ![TravisCI](https://travis-ci.org/evanshortiss/expeditious.svg) [![npm version](https://badge.fury.io/js/expeditious.svg)](https://badge.fury.io/js/expeditious) [![Coverage Status](https://coveralls.io/repos/github/evanshortiss/expeditious/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/expeditious?branch=master)
 
-
 expeditious is a generic caching API that can read/write key value pairs
 from/to compatible caching "engines". Engines enable you to easily switch cache
 storage providers e.g from in node.js memory cache to redis, if desired.
@@ -226,7 +225,8 @@ implementing the required functions. If a function is not implemented in your
 subclass it will use the default behaviour of returning an error stating that
 the called function is not implemented.
 
-Below is an example of a custom engine.
+Below is an example of an incomplete custom engine. For the full prototype
+definition see the [Engine constructor](https://github.com/evanshortiss/expeditious/blob/master/lib/expeditious-engine.js)
 
 ```js
 var ExpeditiousEngine = require('expeditious').ExpeditiousEngine;
@@ -234,6 +234,8 @@ var util = require('util');
 
 function CustomEngine (opts) {
   ExpeditiousEngine.call(this);
+
+  this.entries = {};
 }
 util.inherits(CustomEngine, ExpeditiousEngine);
 
@@ -241,32 +243,22 @@ module.exports = CustomEngine;
 
 CustomEngine.prototype.get = function (namespacedKey, callback) {
   /* get the value for the given key from the data store */
-  callback(null, stringOfDataForKey);
+  callback(null, this.entries[namespacedKey].value);
 };
 
 CustomEngine.prototype.set = function (namespacedKey, val, exp, callback) {
-  /* set the given key value pair in a store to expire in "exp" ms */
+  var self = this;
+
+  self.entries[namespacedKey] = {
+    value: val
+  };
+
+  setTimeout(function () {
+    delete self.entries[namespacedKey];
+  }, exp);
+
+  // Cached successfully!
   callback(null);
-};
-
-CustomEngine.prototype.del = function (namespacedKey, callback) {
-  /* delete the given key from the cache */
-  callback(null);
-};
-
-CustomEngine.prototype.flush = function (callback) {
-  /* delete everything in the given engine instance cache */
-  callback(null);
-};
-
-CustomEngine.prototype.keys = function (callback) {
-  /* return any keys in this engine instance */
-  callback(null, listOfKeysInEngineInstance);
-};
-
-CustomEngine.prototype.ttl = function (namespacedKey, callback) {
-  /* return milliseconds remaining until the provided key expires */
-  callback(null, millisecondsUntilGivenKeyExpires);
 };
 ```
 
