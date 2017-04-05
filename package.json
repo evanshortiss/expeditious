@@ -1,6 +1,6 @@
 {
   "name": "expeditious",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "caching interface to simplify interaction with multiple storage engines",
   "main": "lib/cache.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "eslint": "eslint $(ls lib/*.js)",
     "linelint": "linelint $(ls lib/*.js)",
     "unit": "mocha test/",
-    "coverage": "nyc mocha test/ && nyc report --reporter=html"
+    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
+    "coverage": "nyc mocha test/ && nyc report --reporter=lcov"
   },
   "keywords": [
     "expeditious",

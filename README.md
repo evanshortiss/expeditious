@@ -1,6 +1,7 @@
 expeditious
 ===========
-[![Circle CI](https://circleci.com/gh/evanshortiss/expeditious/tree/master.svg?style=svg)](https://circleci.com/gh/evanshortiss/expeditious/tree/master)
+![TravisCI](https://travis-ci.org/evanshortiss/expeditious.svg) [![npm version](https://badge.fury.io/js/expeditious.svg)](https://badge.fury.io/js/expeditious) [![Coverage Status](https://coveralls.io/repos/github/evanshortiss/expeditious/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/expeditious?branch=master)
+
 
 expeditious is a generic caching API that can read/write key value pairs
 from/to compatible caching "engines". Engines enable you to easily switch cache
@@ -271,3 +272,7 @@ CustomEngine.prototype.ttl = function (namespacedKey, callback) {
 
 ## Contributing
 Contributions are always welcome, just open a PR and add/fix tests for new/changed functionality. If you are unsure about a PR you have in mind, then open an issue for discussion.
+
+## Changelog
+
+* 1.0.0 - Initial stable release. No API changes from 0.2.0.
