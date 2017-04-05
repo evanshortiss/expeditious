@@ -2,7 +2,6 @@ expeditious
 ===========
 ![TravisCI](https://travis-ci.org/evanshortiss/expeditious.svg) [![npm version](https://badge.fury.io/js/expeditious.svg)](https://badge.fury.io/js/expeditious) [![Coverage Status](https://coveralls.io/repos/github/evanshortiss/expeditious/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/expeditious?branch=master)
 
-
 expeditious is a generic caching API that can read/write key value pairs
 from/to compatible caching "engines". Engines enable you to easily switch cache
 storage providers e.g from in node.js memory cache to redis, if desired.
