@@ -1,6 +1,6 @@
 {
   "name": "expeditious",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "caching interface to simplify interaction with multiple storage engines",
   "main": "lib/cache.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "author": "Evan Shortiss",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.6.9",
+    "debug": "~2.6.9",
     "safejson": "~1.0.1",
     "verror": "~1.6.1"
   },
