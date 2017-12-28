@@ -27,7 +27,7 @@ var words = expeditious({
 
 words.set({
   key: 'fáilte',
-  value: 'An Irish Gaelic word meaning "hello"'
+  val: 'An Irish Gaelic word meaning "hello"'
 }, function (err) {
   if (err) {
     console.error('failed to set item in the words cache');
@@ -137,7 +137,7 @@ var words = expeditious({
 
 words.set({
   key: 'fáilte',
-  value: 'An Irish Gaelic word meaning "hello"'
+  val: 'An Irish Gaelic word meaning "hello"'
 }, onItemSet);
 
 function onItemSet (err) {
@@ -181,7 +181,7 @@ var words = expeditious({
 // Add some data with the key "fáilte"
 words.set({
   key: 'fáilte',
-  value: {
+  val: {
     definition: 'An Irish Gaelic word meaning "hello"'
   }
 }, onItemSet);
