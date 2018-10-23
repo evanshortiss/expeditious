@@ -1,6 +1,6 @@
 expeditious
 ===========
-![TravisCI](https://travis-ci.org/evanshortiss/expeditious.svg) [![npm version](https://badge.fury.io/js/expeditious.svg)](https://badge.fury.io/js/expeditious) [![Coverage Status](https://coveralls.io/repos/github/evanshortiss/expeditious/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/expeditious?branch=master)
+![TravisCI](https://travis-ci.org/evanshortiss/expeditious.svg) [![npm version](https://badge.fury.io/js/expeditious.svg)](https://badge.fury.io/js/expeditious) [![Coverage Status](https://coveralls.io/repos/github/evanshortiss/expeditious/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/expeditious?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/evanshortiss/expeditious.svg)](https://greenkeeper.io/)
 
 expeditious is a generic caching API that can read/write key value pairs
 from/to compatible caching "engines". Engines enable you to easily switch cache
