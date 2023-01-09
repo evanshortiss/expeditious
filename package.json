@@ -21,7 +21,7 @@
   "author": "Evan Shortiss",
   "license": "MIT",
   "dependencies": {
-    "debug": "~2.6.9",
+    "debug": "~3.1.0",
     "safejson": "~1.0.1",
     "verror": "~1.6.1"
   },
